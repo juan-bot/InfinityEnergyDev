@@ -1,3 +1,179 @@
+/* SERVICIOS GRID Y CARDS */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+.servicio-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0.3rem 0;
+  margin: 0;
+  text-align: left;
+  transition: none;
+}
+.servicio-card:hover {
+  background: none;
+  box-shadow: none;
+  border: none;
+  transform: none;
+}
+.servicio-icon {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(7,153,146,0.10));
+  border-radius: 12px;
+  background: #f3f6f9;
+  padding: 0.5rem;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+.servicio-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.servicio-card h3 {
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 700;
+}
+.servicio-card p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .servicio-card {
+    flex-direction: row;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+  .servicio-icon {
+    width: 44px;
+    height: 44px;
+    padding: 0.3rem;
+  }
+}
+/* CARRUSEL DE BENEFICIOS */
+.beneficios-carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+.beneficios-cards-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 80vw;
+  max-width: 1100px;
+  padding: 1rem 0;
+}
+.beneficio-card {
+  min-width: 320px;
+  max-width: 420px;
+  flex: 0 0 320px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.beneficio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.carrusel-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+.carrusel-btn:hover {
+  background: var(--primary);
+}
+@media (max-width: 900px) {
+  .beneficios-cards-track {
+    width: 98vw;
+    gap: 1rem;
+  }
+  .beneficio-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    flex: 0 0 90vw;
+  }
+}
+/* BENEFICIOS CARDS HORIZONTALES */
+.beneficio-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 420px;
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.beneficio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.beneficio-card h4 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  min-width: 120px;
+}
+.beneficio-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.beneficio-card li {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 900px) {
+  .beneficios-cards-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .beneficio-card {
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
 :root {
     --bg: #f9f9f9;
     --text: #333;
@@ -46,21 +222,47 @@
   
   /* HERO */
   .hero {
+    position: relative;
     background: #fff;
     color: #000000;
-    min-height: 80vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: 3rem 1rem;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero__content {
+    position: relative;
+    z-index: 2;
   }
   .hero__content .logo {
     max-width: 400px;   /* ajusta el tamaño */
     margin-bottom: 1.5rem;
     animation: fadeIn 1.2s ease;
   }
-  
+   .hero__content h1 {
+    color: white;
+  }
   @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
@@ -264,6 +466,7 @@
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s;
+    z-index: 9999;
   }
   .whatsapp-float:hover { transform: scale(1.1); }
   
@@ -332,4 +535,56 @@
     font-size: 0.95rem;
     line-height: 1.5;
   }
-  
+.quienes-somos_wrap{
+  text-align: center;
+}
+
+/* Flip Card Soluciones */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  min-height: 370px;
+  display: flex;
+  align-items: stretch;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.flip-card-front {
+  z-index: 2;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+  background: var(--accent);
+  color: #fff;
+}
+.soluciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}

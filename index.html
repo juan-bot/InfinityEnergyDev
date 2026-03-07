@@ -19,6 +19,10 @@
           <a href="#inicio">Inicio</a>
           <a href="#reto">Reto</a>
           <a href="#soluciones">Soluciones</a>
+          <a href="#quienes-somos">Partners</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#quienes-somos">Quiénes Somos</a>
           <a href="#contacto">Contacto</a>
         </div>
       </div>
@@ -26,12 +30,16 @@
 
     <!-- Hero -->
     <header id="inicio" class="hero">
-      <div class="hero__bg"></div>
+      <div class="hero__bg">
+        <video autoplay loop muted playsinline class="hero-video">
+          <source src="videos/header.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+      </div>
       <div class="hero__content">
         <!-- Logo -->
         <img src="imagenes/logo.jpeg" alt="Logo Infinity Energy" class="logo">
-    
-        <h1 class="reveal">Innovación Energética Sin Límites ⚡</h1>
+        <h1 class="reveal">Somos tu aliado en seguridad energética ⚡</h1>
       </div>
     </header>
 
@@ -87,50 +95,91 @@
       </div>
     </section>
 
+    
+
     <!-- Soluciones -->
     <section id="soluciones" class="section">
       <div class="container">
         <h2 class="reveal">Nuestras Soluciones</h2>
         <div class="soluciones-grid">
-          <div class="solucion-item reveal">
-            <h3>Infinity Storage</h3>
-            <a href="#storRef">
-              <img src="imagenes/storage_ic.jpeg" alt="Infinity Storage" class="solucion-img">
-            </a>
-            <p> Almacenamiento de energía. Garantizamos energía continua a nuestros clientes sin interrupciones
-            </p>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front solucion-item reveal">
+                <h3>Infinity Storage</h3>
+                <a href="#storRef">
+                  <img src="imagenes/storage_ic.jpeg" alt="Infinity Storage" class="solucion-img">
+                </a>
+                <p> Almacenamiento de energía. Garantizamos energía continua a nuestros clientes sin interrupciones</p>
+              </div>
+              <div class="flip-card-back solucion-item">
+                <h4>Respaldo de energía</h4>
+                <p>Evita apagones y protege tus equipos en hogares y empresas.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="solucion-item reveal delay-1">
-            <h3>Infinity Híbryd</h3>
-            <a href="#hibRef">
-              <img src="imagenes/hibryd_ic.jpeg" alt="Infinity Híbrido" class="solucion-img">
-            </a>
-            <p> Sistemas con 2 o mas fuentes de generación de energía        </p>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front solucion-item reveal delay-1">
+                <h3>Infinity Híbryd</h3>
+                <a href="#hibRef">
+                  <img src="imagenes/hibryd_ic.jpeg" alt="Infinity Híbrido" class="solucion-img">
+                </a>
+                <p> Sistemas con 2 o mas fuentes de generación de energía        </p>
+              </div>
+              <div class="flip-card-back solucion-item">
+                <h4>Híbrido solar + baterías</h4>
+                <p>Combina energía solar y respaldo de baterías para máxima seguridad y ahorro.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="solucion-item reveal delay-3">
-            <h3>Infinity Solar</h3>
-            <a href="#solRef">
-              <img src="imagenes/solar_ic.jpeg" alt="Infinity Solar" class="solucion-img">
-            </a>
-            <p> Sistemas solares con red Generamos ahorros a nuestros clientes con altas tarifas en su recibo de CFE </p>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front solucion-item reveal delay-3">
+                <h3>Infinity Solar</h3>
+                <a href="#solRef">
+                  <img src="imagenes/solar_ic.jpeg" alt="Infinity Solar" class="solucion-img">
+                </a>
+                <p> Sistemas solares con red Generamos ahorros a nuestros clientes con altas tarifas en su recibo de CFE </p>
+              </div>
+              <div class="flip-card-back solucion-item">
+                <h4>Ahorro y energía limpia</h4>
+                <p>Ahorra en tu recibo de luz y contribuye a un futuro más limpio con energía solar.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="solucion-item reveal delay-2">
-            <h3>Infinity Charger</h3>
-            <a href="#charRef">
-              <img src="imagenes/charger_ic.jpeg" alt="Infinity Charger" class="solucion-img">
-            </a>
-            <p> Cargadores para vehículo. Ofrecemos opciones de carga para vehículos eléctricos o híbridos </p>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front solucion-item reveal delay-2">
+                <h3>Infinity Charger</h3>
+                <a href="#charRef">
+                  <img src="imagenes/charger_ic.jpeg" alt="Infinity Charger" class="solucion-img">
+                </a>
+                <p> Cargadores para vehículo. Ofrecemos opciones de carga para vehículos eléctricos o híbridos </p>
+              </div>
+              <div class="flip-card-back solucion-item">
+                <h4>Carga segura y eficiente</h4>
+                <p>Carga tu vehículo eléctrico de forma segura y eficiente en casa o en tu empresa.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="solucion-item reveal delay-4">
-            <h3>Infinity OffGrid</h3>
-            <a href="#offRef">
-              <img src="imagenes/offgrid_ic.jpeg" alt="Infinity OffGrid" class="solucion-img">
-            </a>
-            <p> Sistemas solares sin red. Proporcionamos acceso confiable a la energía en cualquier momento y lugar </p>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front solucion-item reveal delay-4">
+                <h3>Infinity OffGrid</h3>
+                <a href="#offRef">
+                  <img src="imagenes/offgrid_ic.jpeg" alt="Infinity OffGrid" class="solucion-img">
+                </a>
+                <p> Sistemas solares sin red. Proporcionamos acceso confiable a la energía en cualquier momento y lugar </p>
+              </div>
+              <div class="flip-card-back solucion-item">
+                <h4>Independencia energética</h4>
+                <p>Genera tu propia energía donde la necesites, sin depender de la red.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -251,6 +300,122 @@
           </p>
           <p> Genera tu propia energía de manera limpia, confiable y sustentable, sin depender de la red. </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="section beneficios">
+      <div class="container beneficios_wrap">
+        <h2 class="reveal">Beneficios</h2>
+        <h3 class="reveal delay-1">
+        </h3>
+        <div class="beneficios-carrusel">
+          <button class="carrusel-btn carrusel-prev" aria-label="Anterior">&#8592;</button>
+          <div class="beneficios-cards-track">
+            <div class="beneficio-card reveal">
+              <h4>💰 Ganas mas dinero</h4>
+              <ul>
+                <li>Acceso a tecnologías confiables y bien especificadas.</li>
+                <li>Apoyo técnico.</li>
+                <li>Reducción de errores y costos ocultos.</li>
+                <li>Acompañamiento en nuevos mercados.</li>
+              </ul>
+            </div>
+            <div class="beneficio-card reveal">
+              <h4>⏱️ Ahorras tiempo</h4>
+              <ul>
+                <li>Selección y especificación de equipos.</li>
+                <li>Verificación de compatibilidad.</li>
+                <li>Respuesta rápida des cotización hasta suministro.</li>
+                <li>DLogística eficiente con envíos a todo México y seguimiento personalizado.</li>
+              </ul>
+            </div>
+            <div class="beneficio-card reveal">
+              <h4>🛡️ Eliminas riesgos</h4>
+              <ul>
+                <li>Alta calidad con certificaciones internacionales.</li>
+                <li>Estudio de garantías y condiciones.</li>
+                <li>Acompañamiento técnico.</li>
+                <li>Reducción de riesgos técnicos, comerciales y postventa.</li>
+              </ul>
+            </div>
+            <div class="beneficio-card reveal">
+              <h4>⭐ Aumentas estatus profesional</h4>
+              <ul>
+                <li>Capacitaciones.</li>
+                <li>Marcas reconocidas.</li>
+                <li>Posicionamiento como integradores y desarrolladores de soluciones confiables y profesionales.</li>
+              </ul>
+            </div>
+          </div>
+          <button class="carrusel-btn carrusel-next" aria-label="Siguiente">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section servicios">
+      <div class="container servicios_wrap">
+        <h2 class="reveal">Nuestros Servicios</h2>
+        <p class="reveal delay-1">
+          Ofrecemos una amplia gama de servicios especializados en el diseño, instalación y mantenimiento de sistemas de almacenamiento de energía.
+        </p>
+        <div class="servicios-grid">
+          
+          <div class="servicio-card reveal delay-1">
+            <img src="imagenes/solar_ic.jpeg" alt="Instalación Profesional" class="servicio-icon">
+            <div class="servicio-card-content">
+              <h3>Asesoría</h3>
+              <p>Ofrecemos asesoría especializada en el diseño y selección de sistemas de almacenamiento de energía.</p>
+            </div>
+          </div>
+          <div class="servicio-card reveal delay-2">
+            <img src="imagenes/hibryd_ic.jpeg" alt="Mantenimiento y Monitoreo" class="servicio-icon">
+            <div class="servicio-card-content">
+              <h3>Diseño</h3>
+              <p>Diseñamos soluciones energéticas a tu medida.</p>
+            </div>
+          </div>
+          <div class="servicio-card reveal delay-3">
+            <img src="imagenes/charger_ic.jpeg" alt="Asesoría y Consultoría" class="servicio-icon">
+            <div class="servicio-card-content">
+              <h3>Acompañamiento</h3>
+              <p>Brindamos apoyo técnico durante todo el proceso de implementación.</p>
+            </div>
+          </div>
+          <div class="servicio-card reveal delay-4">
+            <img src="imagenes/offgrid_ic.jpeg" alt="Actualización y Expansión" class="servicio-icon">
+            <div class="servicio-card-content">
+              <h3>Suministro de equipos</h3>
+              <p>Proporcionamos los equipos necesarios para la implementación de tus proyectos de almacenamiento de energía.</p>
+            </div>
+          </div>
+          <div class="servicio-card reveal">
+            <img src="imagenes/storage_ic.jpeg" alt="Diseño de Sistemas" class="servicio-icon">
+            <div class="servicio-card-content">
+              <h3>Servicio postventa</h3>
+              <p>Ofrecemos mantenimiento y soporte técnico después de la implementación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="section quienes-somos">
+      <div class="container quienes-somos_wrap">
+        <h2 class="reveal">¿Quiénes somos?</h2>
+        <h3 class="reveal delay-1">
+          Empresa especializada en la distribución y acompañamiento técnico para el diseño de sistemas de
+almacenamiento de energía residencial, comercial e industrial.
+        </h3>
+      </div>
+      <div class="container quienes-somos_wrap">
+        <h2 class="reveal">Nuestro propósito</h2>
+        <h3 class="reveal delay-1">
+          Elevar el nivel de los proyectos de almacenamiento de energía en México, promoviendo prácticas
+profesionales y soluciones confiables con alto impacto positivo para el usuario final.
+        </h3>
       </div>
     </section>
 

@@ -1,3 +1,18 @@
+// Carrusel de beneficios
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector('.beneficios-cards-track');
+  const prevBtn = document.querySelector('.carrusel-prev');
+  const nextBtn = document.querySelector('.carrusel-next');
+  if (track && prevBtn && nextBtn) {
+    const scrollAmount = track.querySelector('.beneficio-card')?.offsetWidth || 320;
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount - 20, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount + 20, behavior: 'smooth' });
+    });
+  }
+});
 // Animaciones al hacer scroll
 document.addEventListener("DOMContentLoaded", () => {
     const revealEls = document.querySelectorAll(".reveal");
