@@ -1,3 +1,52 @@
+/* PARTNERS GRID */
+.partners_wrap {
+  text-align: center;
+}
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.partner-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f3f6f9;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.partner-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(7,153,146,0.13);
+}
+/* Logo y texto en el nav */
+.nav-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+.nav-logo-text {
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: -0.6rem;
+  letter-spacing: 0.5px;
+}
+/* Logo en el nav */
+.nav-logo {
+  height: 104px;
+  width: 104px;
+  object-fit: contain;
+  margin-right: 1rem;
+  border-radius: 8px;
+  vertical-align: middle;
+}
 /* SERVICIOS GRID Y CARDS */
 .servicios-grid {
   display: grid;
@@ -206,7 +255,7 @@
   .nav__wrap {
     max-width: 1200px;
     margin: auto;
-    padding: .8rem 1rem;
+    padding: 2px 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -458,12 +507,12 @@
     color: white;
     font-size: 2rem;
     width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-decoration: none;
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    margin-right: 0.7rem;
+    border-radius: 8px;
+    vertical-align: middle;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s;
     z-index: 9999;
@@ -531,7 +580,7 @@
   }
   
   .solucion-item p {
-    color: var(--muted);
+    color: var(--bg);
     font-size: 0.95rem;
     line-height: 1.5;
   }

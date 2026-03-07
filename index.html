@@ -14,12 +14,14 @@
     <!-- Navegación -->
     <nav class="nav">
       <div class="nav__wrap">
-        <a href="#" class="brand">Infinity Energy</a>
+        <div class="nav-logo-wrap">
+          <img src="imagenes/logo.jpeg" alt="Logo Infinity Energy" class="nav-logo">
+          <div class="nav-logo-text">Storage Store</div>
+        </div>
         <div class="nav__links">
           <a href="#inicio">Inicio</a>
-          <a href="#reto">Reto</a>
           <a href="#soluciones">Soluciones</a>
-          <a href="#quienes-somos">Partners</a>
+          <a href="#partners">Partners</a>
           <a href="#beneficios">Beneficios</a>
           <a href="#servicios">Servicios</a>
           <a href="#quienes-somos">Quiénes Somos</a>
@@ -38,65 +40,9 @@
       </div>
       <div class="hero__content">
         <!-- Logo -->
-        <img src="imagenes/logo.jpeg" alt="Logo Infinity Energy" class="logo">
-        <h1 class="reveal">Somos tu aliado en seguridad energética ⚡</h1>
+        <h1 class="reveal" style="color: chocolate;">Somos tu aliado en seguridad energética ⚡</h1>
       </div>
     </header>
-
-    <!-- Reto energético (página 2 del PDF) -->
-    <section id="reto" class="section section-accent">
-      <div class="container two-col">
-        <div class="col text-col">
-          <h2 class="reveal">PROBLEMATICA</h2>
-          <blockquote class="quote reveal delay-1">
-            “Hoy en día, los hogares y empresas enfrentan un reto creciente: el costo elevado y aumento
-            constante de la energía eléctrica, la dependencia de fuentes no renovables y la incertidumbre
-            frente al futuro energético. Sabemos que buscan soluciones que sean seguras, sustentables y de
-            calidad.”
-          </blockquote>
-          <a class="btn btn-outline reveal delay-2" href="#soluciones">Conoce cómo lo resolvemos</a>
-        </div>
-        <!-- columna visual con 2 imágenes -->
-        <div class="col visual-col reveal delay-2">
-          <div class="img-grid">
-            <img src="imagenes/reto1.jpeg" alt="Consumo de energía" class="reto-img">
-            <img src="imagenes/reto2.jpeg" alt="Soluciones sostenibles" class="reto-img">
-          </div>
-        </div>
-      </div>
-    </section>
-
-      <!-- Sobre nosotros -->
-    <section id="sobre" class="section">
-      <div class="container">
-        <h2 class="reveal">Sobre Nosotros</h2>
-
-        <!-- Grid de 4 columnas -->
-        <div class="sobre-grid">
-          <div class="sobre-item reveal">
-            <h3>¿Quienes somos?</h3>
-            <p> Somos una empresa dedicada a desarrollar soluciones energéticas con ingeniería especializada generando ahorros sostenibles y bienestar a nuestros clientes.</p>
-          </div>
-          <div class="sobre-item reveal delay-1">
-            <h3>Misión</h3>
-            <p> Generar ahorros en hogares y empresas mediante soluciones energéticas, seguras, sustentables y de calidad, diseñadas con ingeniería especializada para brindar confianza y bienestar.</p>
-          </div>
-          <div class="sobre-item reveal delay-2">
-            <h3>Visión</h3>
-            <p> Ser la empresa de energía más confiable y sustentable de México, generando bienestar y un futuro más limpio para nuestros socios.</p>
-          </div>
-          <div class="sobre-item reveal delay-3">
-            <h3>Valores</h3>
-            <p> *Responsabilidad </p>
-            <p> *Confianza </p>
-            <p> *Compromiso</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-
     <!-- Soluciones -->
     <section id="soluciones" class="section">
       <div class="container">
@@ -105,11 +51,10 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front solucion-item reveal">
-                <h3>Infinity Storage</h3>
+                <h3>Peak Saving</h3>
                 <a href="#storRef">
                   <img src="imagenes/storage_ic.jpeg" alt="Infinity Storage" class="solucion-img">
                 </a>
-                <p> Almacenamiento de energía. Garantizamos energía continua a nuestros clientes sin interrupciones</p>
               </div>
               <div class="flip-card-back solucion-item">
                 <h4>Respaldo de energía</h4>
@@ -121,7 +66,7 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front solucion-item reveal delay-1">
-                <h3>Infinity Híbryd</h3>
+                <h3>Respaldo</h3>
                 <a href="#hibRef">
                   <img src="imagenes/hibryd_ic.jpeg" alt="Infinity Híbrido" class="solucion-img">
                 </a>
@@ -137,7 +82,7 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front solucion-item reveal delay-3">
-                <h3>Infinity Solar</h3>
+                <h3>Aislados</h3>
                 <a href="#solRef">
                   <img src="imagenes/solar_ic.jpeg" alt="Infinity Solar" class="solucion-img">
                 </a>
@@ -153,7 +98,7 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front solucion-item reveal delay-2">
-                <h3>Infinity Charger</h3>
+                <h3>Autoconsumo</h3>
                 <a href="#charRef">
                   <img src="imagenes/charger_ic.jpeg" alt="Infinity Charger" class="solucion-img">
                 </a>
@@ -166,139 +111,26 @@
             </div>
           </div>
 
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front solucion-item reveal delay-4">
-                <h3>Infinity OffGrid</h3>
-                <a href="#offRef">
-                  <img src="imagenes/offgrid_ic.jpeg" alt="Infinity OffGrid" class="solucion-img">
-                </a>
-                <p> Sistemas solares sin red. Proporcionamos acceso confiable a la energía en cualquier momento y lugar </p>
-              </div>
-              <div class="flip-card-back solucion-item">
-                <h4>Independencia energética</h4>
-                <p>Genera tu propia energía donde la necesites, sin depender de la red.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
-
-    <!-- Infinity Storage -->
-    <section class="solution" id="storRef" >
-      <div class="container two-col">
-        <div class="col">
-          <img src="imagenes/storage.jpeg" alt="Infinity Storage" class="solution-img">
-        </div>
-        <div class="col">
-          <h3>Infinity Storage</h3>
-          <p>
-            ¿La red eléctrica te falla constantemente? 
-            <br>
-            ¿Sufres de apagones o variaciones de voltaje?  
-            <br>
-            ¿Quieres ahorrar en tu recibo de CFE?
-            <br><br>
-            En <b> Infinity Energy </b>  desarrollamos tu sistema de respaldo de baterías para que tu hogar o empresa
-            tenga energía eléctrica sin interrupciones.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Infinity Híbrido -->
-    <section class="solution alt" id="hibRef" >
-      <div class="container two-col">
-        <div class="col">
-          <h3>Infinity Híbryd</h3>
-          <p>
-            ¿Ya cuentas con un sistema solar? 
-            <br>
-            ¿Aún sufres apagones a pesar de tenerlo?
-            <br><br>
-            En <b> Infinity Energy </b>  te ayudamos a actualizar tu sistema solar
-            en híbrido, integrando un respaldo de baterías que te
-            garantiza energía continua, incluso cuando la red eléctrica
-            falla.
-          </p>
-        </div>
-        <div class="col">
-          <img src="imagenes/hybrid.jpeg" alt="Infinity Híbrido" class="solution-img">
-        </div>
-      </div>
-    </section>
-
-    <!-- Infinity Charger -->
-    <section class="solution" id="charRef" >
-      <div class="container two-col">
-        <div class="col">
-          <img src="imagenes/charger.jpeg" alt="Infinity Charger" class="solution-img">
-        </div>
-        <div class="col">
-          <h3>Infinity Charger</h3>
-          <p>
-            ¿Ya cuentas con un vehículo eléctrico o híbrido?
-            <br>
-            ¿Planeas adquirir uno próximamente?
-            <br><br>
-            En <b>Infinity Energy</b> ofrecemos la solución ideal para cargar
-            vehículos de manera segura y eficiente, con equipos de la
-            más alta calidad y total compatibilidad para hogares y
-            empresas.
-            <br><br>
-            Conduce el futuro. Cárgalo con Infinity Energy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Infinity Solar -->
-    <section class="solution alt" id="solRef" >
-      <div class="container two-col">
-        <div class="col">
-          <h3>Infinity Solar</h3>
-          <p>
-            ¿Pagas altos costos de energía? <br>
-            ¿Quieres ahorrar mientras contribuyes a un entorno más
-            sustentable?
-            <br><br>
-            En <b> Infinity Energy </b> analizamos tu recibo de CFE y diseñamos
-            la solución solar más inteligente, con tecnología confiable y
-            garantías sólidas para que pagues lo mínimo posible según
-            tu tarifa, durante los siguientes 25 años.
-            <br><br>
-            Con nuestros sistemas solares, ahorras mensualmente,
-            generas tu propia energía limpia y contribuyes a un futuro
-            más verde.
-          </p>
-        </div>
-        <div class="col">
-          <img src="imagenes/solar.jpeg" alt="Infinity Solar" class="solution-img">
-        </div>
-      </div>
-    </section>
-
-    <!-- Infinity OffGrid -->
-    <section class="solution" id="offRef" >
-      <div class="container two-col">
-        <div class="col">
-          <img src="imagenes/offgrid.jpeg" alt="Infinity OffGrid" class="solution-img">
-        </div>
-        <div class="col">
-          <h3>Infinity OffGrid</h3>
-          <p> ¿En el sitio donde te encuentras no cuenta con red de energía eléctrica? 
-            <br>
-            ¿quieres independizarte de CFE?
-          </p>
-          <p> 
-            En <b> Infinity Energy </b>diseñamos y desarrollamos proyectos de
-            sistemas solares aislados que te brindan energía en
-            cualquier lugar y en todo momento.
-            Genera tu propia energía de manera limpia, confiable y
-            sustentable, sin depender de la red.
-          </p>
-          <p> Genera tu propia energía de manera limpia, confiable y sustentable, sin depender de la red. </p>
+<!-- Partners -->
+    <section id="partners" class="section partners">
+      <div class="container partners_wrap">
+        <h2 class="reveal">Nuestros Partners</h2>
+        <div class="partners-grid">
+          <img src="imagenes/partners/7632853.png" alt="Partner 1" class="partner-img reveal">
+          <img src="imagenes/partners/Fortress Power Logo Filled Medium.png" alt="Partner 2" class="partner-img reveal">
+          <img src="imagenes/partners/Fronius-Logo.png" alt="Partner 3" class="partner-img reveal">
+          <img src="imagenes/partners/GW-logo_red-350x350.png" alt="Partner 4" class="partner-img reveal">
+          <img src="imagenes/partners/Hoymiles_logo.png" alt="Partner 5" class="partner-img reveal">
+          <img src="imagenes/partners/Logo_SolArk_NoTagline_PMS.png" alt="Partner 6" class="partner-img reveal">
+          <img src="imagenes/partners/k2.webp" alt="Partner 7" class="partner-img reveal">
+          <img src="imagenes/partners/logo-Generac-transparente.png" alt="Partner 8" class="partner-img reveal">
+          <img src="imagenes/partners/logo-colorida.png" alt="Partner 9" class="partner-img reveal">
+          <img src="imagenes/partners/pytes.png" alt="Partner 10" class="partner-img reveal">
+          <img src="imagenes/partners/raluxsolar-logo.png" alt="Partner 11" class="partner-img reveal">
         </div>
       </div>
     </section>
