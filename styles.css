@@ -1,3 +1,13 @@
+/* Eliminar animación reveal en flip cards para evitar temblor */
+.flip-card-front.reveal,
+.flip-card-back.reveal,
+.flip-card-front .reveal,
+.flip-card-back .reveal {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 /* PARTNERS CARRUSEL */
 .partners_wrap {
   text-align: center;
@@ -588,12 +598,6 @@
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .flip-card-front .solucion-item {
-    transition: none;
-  }
-  .flip-card-front .solucion-item:hover {
-    transform: none;
-  }
   .solucion-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -642,8 +646,7 @@
   transform-style: preserve-3d;
   will-change: transform;
 }
-.flip-card:hover .flip-card-inner,
-.flip-card:focus-within .flip-card-inner {
+.flip-card-inner.flipped {
   transform: rotateY(180deg);
 }
 .flip-card-front, .flip-card-back {
@@ -660,11 +663,7 @@
   justify-content: center;
   padding: 2rem 1rem;
   user-select: none;
-}
-.flip-card-front.reveal {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
+  pointer-events: none;
 }
 .flip-card-front {
   z-index: 2;

@@ -1,3 +1,12 @@
+// Flip cards sin temblor
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.flip-card').forEach(card => {
+    const inner = card.querySelector('.flip-card-inner');
+    card.addEventListener('mouseenter', () => inner.classList.add('flipped'));
+    card.addEventListener('mouseleave', () => inner.classList.remove('flipped'));
+  });
+});
+
 // Carrusel de partners infinito robusto con intervalo fijo
 document.addEventListener("DOMContentLoaded", () => {
   const partnerTrack = document.querySelector('.partners-track');
