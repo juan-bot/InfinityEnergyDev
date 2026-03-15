@@ -28,6 +28,8 @@
   max-width: 1700px;
   padding: 1rem 0;
   position: relative;
+  cursor: grab;
+  user-select: none;
 }
 .partners-track a {
   display: flex;
@@ -673,6 +675,12 @@
   z-index: 3;
   background: var(--accent);
   color: #fff;
+}
+.flip-card-front h4 {
+  margin: 0 0 0.8rem;
+  color: var(--primary);
+  font-size: 1rem;
+  text-align: center;
 }
 .soluciones-grid {
   display: grid;

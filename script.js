@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let scrollStep = 1;
     let imagWidth = partnerTrack.querySelector('.partner-img')?.offsetWidth || 160;
     let originalPartners = partnerTrack.children.length / 2;
-    let resetPoint = imagWidth * originalPartners + (originalPartners * 32); // 32 es el gap
+    let resetPoint = imagWidth * originalPartners + (originalPartners * 32);
     function updateVars() {
       imagWidth = partnerTrack.querySelector('.partner-img')?.offsetWidth || 160;
       originalPartners = partnerTrack.children.length / 2;
@@ -28,10 +28,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateVars();
     partnerTrack.scrollLeft = 0;
-    // Usar intervalo fijo para mejor control y evitar trabas
+
+    // Soporte táctil (swipe con el dedo)
+    let touchStartX = 0;
+    let touchScrollStart = 0;
+    let isDragging = false;
+    partnerTrack.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchScrollStart = partnerTrack.scrollLeft;
+      isDragging = true;
+    }, { passive: true });
+    partnerTrack.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const dx = touchStartX - e.touches[0].clientX;
+      partnerTrack.scrollLeft = touchScrollStart + dx;
+      if (partnerTrack.scrollLeft >= resetPoint) partnerTrack.scrollLeft -= resetPoint;
+      if (partnerTrack.scrollLeft < 0) partnerTrack.scrollLeft += resetPoint;
+    }, { passive: true });
+    partnerTrack.addEventListener('touchend', () => { isDragging = false; });
+
+    // Soporte arrastre con mouse
+    let mouseDown = false;
+    let mouseStartX = 0;
+    let mouseScrollStart = 0;
+    partnerTrack.addEventListener('mousedown', (e) => {
+      mouseDown = true;
+      mouseStartX = e.clientX;
+      mouseScrollStart = partnerTrack.scrollLeft;
+      partnerTrack.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!mouseDown) return;
+      const dx = mouseStartX - e.clientX;
+      partnerTrack.scrollLeft = mouseScrollStart + dx;
+      if (partnerTrack.scrollLeft >= resetPoint) partnerTrack.scrollLeft -= resetPoint;
+      if (partnerTrack.scrollLeft < 0) partnerTrack.scrollLeft += resetPoint;
+    });
+    window.addEventListener('mouseup', () => {
+      mouseDown = false;
+      partnerTrack.style.cursor = 'grab';
+    });
+
+    // Auto-scroll
     const scrollInterval = setInterval(() => {
       if (partnerTrack.scrollLeft >= resetPoint - scrollStep * 3) {
-        // Reiniciar instantáneamente sin animación
         partnerTrack.scrollLeft = 0;
       } else {
         partnerTrack.scrollLeft += scrollStep;
