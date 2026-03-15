@@ -1,24 +1,42 @@
-/* PARTNERS GRID */
+/* PARTNERS CARRUSEL */
 .partners_wrap {
   text-align: center;
 }
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+.partners-carrusel {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   margin-top: 2rem;
 }
+.partners-track {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  scroll-behavior: auto;
+  width: 95vw;
+  max-width: 1700px;
+  padding: 1rem 0;
+  position: relative;
+}
+.partners-track a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex: 0 0 250px;
+}
 .partner-img {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
   border-radius: 12px;
   background: #f3f6f9;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   padding: 1rem;
+  flex: 0 0 250px;
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 .partner-img:hover {
   transform: scale(1.08);
@@ -126,16 +144,17 @@
 .beneficios-cards-track {
   display: flex;
   gap: 2rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  width: 80vw;
-  max-width: 1100px;
+  overflow: hidden;
+  scroll-behavior: auto;
+  width: 95vw;
+  max-width: 1700px;
   padding: 1rem 0;
+  position: relative;
 }
 .beneficio-card {
-  min-width: 320px;
-  max-width: 420px;
-  flex: 0 0 320px;
+  min-width: 400px;
+  max-width: 400px;
+  flex: 0 0 400px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -559,6 +578,12 @@
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  .flip-card-front .solucion-item {
+    transition: none;
+  }
+  .flip-card-front .solucion-item:hover {
+    transform: none;
+  }
   .solucion-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -597,13 +622,15 @@
   min-height: 370px;
   display: flex;
   align-items: stretch;
+  cursor: pointer;
 }
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.5s ease-in-out;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 .flip-card:hover .flip-card-inner,
 .flip-card:focus-within .flip-card-inner {
@@ -622,6 +649,12 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
+  user-select: none;
+}
+.flip-card-front.reveal {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 .flip-card-front {
   z-index: 2;
