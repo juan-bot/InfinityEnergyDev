@@ -5,6 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener('mouseenter', () => inner.classList.add('flipped'));
     card.addEventListener('mouseleave', () => inner.classList.remove('flipped'));
   });
+
+  // Menú hamburguesa sidebar
+  const hamburger = document.querySelector('.nav__hamburger');
+  const navLinks = document.querySelector('.nav__links');
+  const overlay = document.querySelector('.nav__overlay');
+
+  function openMenu() {
+    navLinks.classList.add('open');
+    hamburger.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  overlay.addEventListener('click', closeMenu);
 });
 
 // Carrusel de partners infinito robusto con intervalo fijo
