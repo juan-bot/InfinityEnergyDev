@@ -520,23 +520,33 @@
   /* WhatsApp flotante */
   .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 24px;
+    right: 24px;
     background: #25d366;
-    color: white;
-    font-size: 2rem;
-    width: 60px;
-    height: 64px;
+    color: #fff;
     width: 64px;
-    object-fit: contain;
-    margin-right: 0.7rem;
-    border-radius: 8px;
-    vertical-align: middle;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    transition: box-shadow 0.2s, transform 0.2s;
     z-index: 9999;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
-  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+  }
   
   /* Animaciones reveal */
   .reveal {
