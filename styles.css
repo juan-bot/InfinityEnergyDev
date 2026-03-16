@@ -162,6 +162,8 @@
   max-width: 1700px;
   padding: 1rem 0;
   position: relative;
+  cursor: grab;
+  user-select: none;
 }
 .beneficio-card {
   min-width: 400px;
@@ -281,7 +283,7 @@
     top: 0;
     background: #fff;
     border-bottom: 1px solid var(--border);
-    z-index: 50;
+    z-index: 300;
   }
   .nav__wrap {
     max-width: 1200px;
@@ -348,14 +350,7 @@
   .nav__links a:hover { color: var(--primary); background: #f3f6f9; }
 
   /* Overlay invisible para detectar clic fuera del sidebar */
-  .nav__overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: transparent;
-    z-index: 199;
-  }
-  .nav__overlay.open { display: block; }
+  .nav__overlay { display: none; }
   
   /* HERO */
   .hero {

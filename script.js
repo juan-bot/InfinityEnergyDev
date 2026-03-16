@@ -9,26 +9,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // Menú hamburguesa sidebar
   const hamburger = document.querySelector('.nav__hamburger');
   const navLinks = document.querySelector('.nav__links');
-  const overlay = document.querySelector('.nav__overlay');
 
   function openMenu() {
     navLinks.classList.add('open');
     hamburger.classList.add('open');
-    overlay.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
   }
   function closeMenu() {
     navLinks.classList.remove('open');
     hamburger.classList.remove('open');
-    overlay.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
   }
 
   hamburger.addEventListener('click', () => {
     navLinks.classList.contains('open') ? closeMenu() : openMenu();
   });
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  overlay.addEventListener('click', closeMenu);
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      closeMenu();
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    });
+  });
+  // Cerrar al hacer clic fuera del sidebar
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
 });
 
 // Carrusel de partners infinito robusto con intervalo fijo
@@ -129,10 +141,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateVars();
     track.scrollLeft = 0;
-    // Usar intervalo fijo para mejor control y evitar trabas
+
+    // Soporte táctil (swipe con el dedo)
+    let touchStartX = 0;
+    let touchScrollStart = 0;
+    let isDragging = false;
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchScrollStart = track.scrollLeft;
+      isDragging = true;
+    }, { passive: true });
+    track.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const dx = touchStartX - e.touches[0].clientX;
+      track.scrollLeft = touchScrollStart + dx;
+      if (track.scrollLeft >= resetPoint) track.scrollLeft -= resetPoint;
+      if (track.scrollLeft < 0) track.scrollLeft += resetPoint;
+    }, { passive: true });
+    track.addEventListener('touchend', () => { isDragging = false; });
+
+    // Soporte arrastre con mouse
+    let mouseDown = false;
+    let mouseStartX = 0;
+    let mouseScrollStart = 0;
+    track.addEventListener('mousedown', (e) => {
+      mouseDown = true;
+      mouseStartX = e.clientX;
+      mouseScrollStart = track.scrollLeft;
+      track.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!mouseDown) return;
+      const dx = mouseStartX - e.clientX;
+      track.scrollLeft = mouseScrollStart + dx;
+      if (track.scrollLeft >= resetPoint) track.scrollLeft -= resetPoint;
+      if (track.scrollLeft < 0) track.scrollLeft += resetPoint;
+    });
+    window.addEventListener('mouseup', () => {
+      mouseDown = false;
+      track.style.cursor = 'grab';
+    });
+
+    // Auto-scroll
     const scrollInterval = setInterval(() => {
       if (track.scrollLeft >= resetPoint - scrollStep * 3) {
-        // Reiniciar instantáneamente sin animación
         track.scrollLeft = 0;
       } else {
         track.scrollLeft += scrollStep;
